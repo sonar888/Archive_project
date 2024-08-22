@@ -1,10 +1,10 @@
 <?php
 
+use App\Models\Tag;
+use App\Models\Work;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\User;
-use App\Models\Tag;
 
 return new class extends Migration
 {
@@ -13,15 +13,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('works', function (Blueprint $table) {
+        Schema::create('tag_work', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class, 'author_id');
-            $table->text('title');
-            $table->text('body');
-            $table->integer('chapters');
-            $table -> timestamps();
-            
-            
+            $table->foreignIdFor(Tag::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Work::class)->constrained()->cascadeOnDelete();
+            $table->timestamps();
         });
     }
 
@@ -30,7 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('works');
+        Schema::dropIfExists('tag_work');
     }
 };
- 
