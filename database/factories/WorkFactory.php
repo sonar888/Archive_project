@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Works>
  */
-class WorksFactory extends Factory
+class WorkFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,7 +18,7 @@ class WorksFactory extends Factory
     {
         return [
             'author'=> 1,
-            'title' => fake()->title(),
+            'title' => fake()->text(),
             'body' => fake()->text(),
             'chapters'=>rand(1,20)
         ];

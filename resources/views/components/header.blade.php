@@ -4,7 +4,7 @@
       <img src="https://picsum.photos/30" alt="">
     </div>
     <div>
-      <h1 class="text-3xl font-bold  text-dark">The archive</h1>
+      <a href="/"><h1 class="text-3xl font-archive bold  text-dark">The archive</h1></a>
     </div>  
   </div>
   <div>

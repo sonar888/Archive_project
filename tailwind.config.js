@@ -14,7 +14,11 @@ export default {
         "blue": "#748cab",
         "light": "#f0ebd8"
         
+      },
+      fontFamily: {
+        "archive" : ['Grey Qo', 'Helvetica']
       }
+
     },
   },
   plugins: [],

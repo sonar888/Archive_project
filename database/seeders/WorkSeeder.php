@@ -5,15 +5,15 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-use App\Models\Works;
+use App\Models\Work;
 
-class WorksSeeder extends Seeder
+class WorkSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Works::factory(20)->create();
+        Work::factory(20)->create();
     }
 }
