@@ -1,5 +1,6 @@
 <x-layout>
-    <form method="POST" action="/works/3/chapters">
+  
+    <form method="POST" action="/works/{{ $work->id }}/chapters">
       @csrf
         <x-input type='text' name='title'>Title</x-input>
         <x-input type='text' name='body'>body</x-input>

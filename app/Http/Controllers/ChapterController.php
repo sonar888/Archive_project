@@ -19,9 +19,9 @@ class ChapterController extends Controller
         
     }
 
-    public function create() {
+    public function create(Work $work) {
         
-        return view('chapters.create');
+        return view('chapters.create', ['work'=> $work]);
     }
 
 
@@ -36,7 +36,7 @@ class ChapterController extends Controller
 
 
 
-    public function store(Chapter $chapter) {
+    public function store(Work $work, Chapter $chapter) {
         request()->validate(
             [
                 'title' => ['required', 'min:3'],
@@ -47,7 +47,7 @@ class ChapterController extends Controller
         $chapter = Chapter::create([
             'title' => request('title'),
             'body' => request('body'),
-            'work_id' => 3
+            'work_id' => $work->id
             
         ]);
         

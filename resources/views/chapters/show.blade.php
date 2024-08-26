@@ -17,7 +17,7 @@
     <form action='/works/{{ $chapter->work_id }}/chapters/{{ $chapter->id }}' method="POST">
         @csrf
         @method('DELETE')
-        <button>Delete chapter</button>
+        <x-button>Delete chapter</x-button>
     </form>
 
     <x-button href="/works/{{ $chapter->work_id }}/chapters/{{ $chapter->id }}/edit">Edit</x-button>

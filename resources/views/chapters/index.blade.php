@@ -5,6 +5,7 @@
     @foreach ($work->chapters as $chapter )
 
     <h1>{{ $chapter->title }}</h1>
+    <p>{{ $chapter->id }}</p>
     <p>{{ $chapter->body }}</p>
     <x-button href='/works/{{ $work->id }}/chapters/{{ $chapter->id }}'>Show chapter</x-button>
         
