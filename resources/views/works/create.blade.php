@@ -2,7 +2,7 @@
 <form method="POST" action="/works">
   @csrf
     <x-input type='text' name='title'>Title</x-input>
-    <x-input type='text' name='body'>Body</x-input>
+    <x-input type='text' name='summary'>summary</x-input>
   
     <div class="mt-6 flex items-center justify-end gap-x-6">
       <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>

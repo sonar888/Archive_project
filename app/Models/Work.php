@@ -22,4 +22,10 @@ class Work extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    public function chapters()
+
+    {
+        return $this->hasMany(Chapter::class);
+    }
 }

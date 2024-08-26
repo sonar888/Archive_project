@@ -6,10 +6,10 @@
 
     <p>Work tags</p>
 
-    <p>Chapters {{ $work['chapters'] }}</p>
+    <p>Chapters {{ $work['chapter_count'] }}</p>
 
     <div>
-        {{ $work['body'] }}
+        {{ $work['summary'] }}
     </div>
 
     
@@ -20,7 +20,10 @@
         <button>Delete Work</button>
     </form>
 
-    <button><a href="/works/{{ $work->id }}/edit">Edit</a></button>
+    
+    <x-button href="/works/{{ $work->id }}/edit">Edit Work</x-button>
+
+    <x-button href="/works/{{ $work->id }}/chapters">Show chapters</x-button>
 
 
 

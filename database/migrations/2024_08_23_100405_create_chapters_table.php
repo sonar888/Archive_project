@@ -3,8 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\User;
-use App\Models\Tag;
+
+use App\Models\Work;
 
 return new class extends Migration
 {
@@ -13,15 +13,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('works', function (Blueprint $table) {
+        Schema::create('chapters', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class, 'author_id');
-            $table->text('title');
-            $table->text('summary');
-            $table->integer('chapter_count');
-            $table -> timestamps();
-            
-            
+            $table->string('title');
+            $table -> text('body');
+            $table->foreignIdFor(Work::class, 'work_id');
+            $table->timestamps();
         });
     }
 
@@ -30,7 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('works');
+        Schema::dropIfExists('chapters');
     }
 };
- 
