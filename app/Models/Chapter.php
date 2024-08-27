@@ -15,4 +15,9 @@ class Chapter extends Model
         return $this->belongsTo(Work::class);
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 }

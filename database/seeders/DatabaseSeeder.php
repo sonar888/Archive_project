@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Work;
 use App\Models\Tag;
 use App\Models\Chapter;
+use App\Models\Comment;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -20,9 +21,10 @@ class DatabaseSeeder extends Seeder
         
         
 
-        Work::factory(20)->create();
-        User::factory(10)->create();
-        Tag::factory(10)->create();
-        Chapter::factory(5)->create();
+        Work::factory(3)->create();
+        User::factory(2)->create();
+        // Tag::factory(10)->create();
+        Chapter::factory(20)->create();
+        Comment::factory(12)->create();
     }
 }

@@ -28,4 +28,10 @@ class Work extends Model
     {
         return $this->hasMany(Chapter::class);
     }
+
+    public function comments()
+
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
