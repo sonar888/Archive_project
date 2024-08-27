@@ -9,7 +9,7 @@ use App\Models\Work;
 class WorkController extends Controller
 {
     public function index() {
-        $works = Work::all();
+        $works = Work::with('chapters')->latest()->paginate(100); 
         return view('works.index', ['works' => $works]);
     }
 

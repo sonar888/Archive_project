@@ -61,7 +61,7 @@
         <div class="flex gap-1 justify-end">
           <p>Language: English</p>
           <p>Words: 10 025</p>
-          <p>Chapters: 1/10</p>
+          <p>Chapters: {{ count($work->chapters) }}/10</p>
           <p>Hits: 20</p>
 
         </div>

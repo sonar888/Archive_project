@@ -21,6 +21,7 @@ class ChapterController extends Controller
 
     public function create(Work $work) {
         
+        
         return view('chapters.create', ['work'=> $work]);
     }
 
@@ -28,7 +29,10 @@ class ChapterController extends Controller
 
 
     public function show(Work $work, Chapter $chapter) {
-        return view('chapters.show', ['chapter'=> $chapter]);
+
+        
+        
+        return view('chapters.show', ['work'=> $work, 'chapter'=> $chapter]);
     }
 
 
