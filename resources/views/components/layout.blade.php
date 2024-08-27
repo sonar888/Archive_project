@@ -19,6 +19,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <!-- Styles -->
+        <script src="https://kit.fontawesome.com/7c9183587f.js" crossorigin="anonymous"></script>
         
     </head>
     <!--
@@ -29,20 +30,32 @@
   <body class="h-full">
   ```
 -->
-<body class="h-full">
-    <div class="min-h-full">
-        <x-header >The Archive</x-header>
-        <x-nav></x-nav>
+  <body class="h-full">
+    <div class="min-h-full flex-col">
+      <x-header>The Archive</x-header>
+        
       
         
-        <main>
-          <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-            {{ $slot }}
-          </div>
-        </main>
-      </div>
-    
-    
-</body>
-  
+      <main class="my-5">
+       {{ $slot }}
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+    </div>
+      
+      
+  </body>
 </html>
