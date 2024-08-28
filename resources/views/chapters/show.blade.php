@@ -32,7 +32,7 @@
     {{-- Work navigation Top --}}
     <div class="flex justify-end">
         <x-button>Entire Work</x-button>
-        {{-- <x-button href='/works/{{ $chapter->work->id }}/chapters/{{  }}'>Next Chapter</x-button> --}}
+        <x-button href='/works/{{ $chapter->work->id }}/chapters/{{ $next_record->id }}'>Next Chapter</x-button>
         <x-button>Chapter Index</x-button>
         <x-button>Comments</x-button>
         <x-button>Share</x-button>

@@ -30,9 +30,11 @@ class ChapterController extends Controller
 
     public function show(Work $work, Chapter $chapter) {
 
+    
+        //Retrieving the id for the next chapter in the work: get the first chapter where the chapter id is bigger than the current chapter id
+        $next_record = Chapter::where('id', '>', $chapter->id)->orderBy('id')->first();
         
-        
-        return view('chapters.show', ['work'=> $work, 'chapter'=> $chapter]);
+        return view('chapters.show', ['work'=> $work, 'chapter'=> $chapter, 'next_record'=> $next_record]);
     }
 
 
