@@ -23,4 +23,28 @@ class KudosController extends Controller
 
       
     }
+
+
+
+
 }
+
+
+
+
+
+
+// {
+
+// Kudo::find($work->id)
+//   $work ->update(
+//     [
+//         'kudos' => Kudo::find($work->id),
+//     ]
+// );
+
+// return redirect('/works/'.$work->id. '/chapters/'.$work->chapter_id);
+  
+
+  
+// }

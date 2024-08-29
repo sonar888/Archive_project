@@ -56,3 +56,6 @@ class TagController extends Controller
         return redirect('/tags/'.$tag['id']);
     }
 }
+
+
+// $work->tags()->attach(4)

@@ -18,8 +18,10 @@ class TagFactory extends Factory
     {
         return [
             'name'=> fake()->name,
-            'category'=> 'Character'
+            'type'=> 'Rating'
             
         ];
     }
 }
+
+

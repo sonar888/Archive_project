@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->timestamps();
-            $table->string('category');
+            $table->string('type');
         });
     }
 
@@ -27,3 +27,17 @@ return new class extends Migration
         Schema::dropIfExists('tags');
     }
 };
+
+
+
+// public function up ()
+// {
+//     Schema::create('payroll', function (Blueprint $table) {
+//         $table->increments('id');
+//         $table->integer('position_id');
+//         $table->decimal('salary',9,2);
+//     });
+
+//     // Add the constraint
+//     DB::statement('ALTER TABLE payroll ADD CONSTRAINT chk_salary_amount CHECK (salary < 150000.00);');
+// }
