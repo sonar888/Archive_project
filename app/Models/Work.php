@@ -30,8 +30,12 @@ class Work extends Model
     }
 
     public function comments()
-
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function kudos()
+    {
+        return $this->hasMany(Kudos::class);
     }
 }

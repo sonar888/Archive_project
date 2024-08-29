@@ -4,6 +4,7 @@ use App\Http\Controllers\WorkController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\ChapterController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\KudosController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Work;
 
@@ -22,18 +23,16 @@ Route::get('/tags', function () {
 });
 
 
+//Kudos
+
+Route::post('/works/{work}/chapters/kudos', [KudosController::class,'store']);
+
+
+
 //Comments
 
 //In this case the displaying of the comments is handled in the chapter views directly
 
-// Route::get('/works/{work}/chapters/comments', [CommentController::class,'index']);
-
-
-
-// Route::get('/works/{work}/chapters/{chapter}/comments/create', [CommentController::class,'create']);
-// Route::get('/works/{work}/chapters/{chapter}/comments/edit', [CommentController::class, 'edit']);
-
-// Route::get('/works/{work}/chapters/{chapter}/comments', [CommentController::class, 'show']);
 Route::post('/works/{work}/chapters/{chapter}/comments', [CommentController::class,'store']);
 Route::patch('/works/{work}/chapters/{chapter}/comments/{comment}', [CommentController::class,'update']);
 Route::delete('/works/{work}/chapters/{chapter}/comments/{comment}', [CommentController::class,'destroy']);

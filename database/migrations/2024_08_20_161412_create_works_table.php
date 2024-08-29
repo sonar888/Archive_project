@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('title');
             $table->text('summary');
             $table->integer('chapter_count');
+            $table->integer('kudos');
             $table -> timestamps();
             
             

@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\Work;
-use App\Models\Tag;
+use App\Models\Kudos;
 use App\Models\Chapter;
 use App\Models\Comment;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -26,5 +26,6 @@ class DatabaseSeeder extends Seeder
         // Tag::factory(10)->create();
         Chapter::factory(20)->create();
         Comment::factory(12)->create();
+        Kudos::factory(20)->create();
     }
 }

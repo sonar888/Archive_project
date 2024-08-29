@@ -5,6 +5,7 @@ use App\Models\Work;
 use App\Models\Chapter;
 use App\Models\Comment;
 use App\Models\User;
+use App\Models\Kudos;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -39,6 +40,12 @@ return new class extends Migration
             $table->foreignIdFor(User::class, 'author_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
+
+        Schema::create('kudos_work', function (Blueprint $table) {
+            $table->id();
+            $table->foreignIdFor(Work::class, 'work_id')->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(User::class, 'author_id')->constrained()->cascadeOnDelete();
+        });
     }
 
     /**
@@ -49,5 +56,6 @@ return new class extends Migration
         Schema::dropIfExists('tag_work');
         Schema::dropIfExists('chapter_work');
         Schema::dropIfExists('comment_work');
+        Schema::dropIfExists('kudos_work');
     }
 };

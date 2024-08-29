@@ -31,9 +31,9 @@
 
     {{-- Work navigation Top --}}
     <div class="flex justify-end">
-        <x-button>Entire Work</x-button>
+        <x-button href='/works/{{ $chapter->work->id }}/chapters'>Entire Work</x-button>
         <x-button href='/works/{{ $chapter->work->id }}/chapters/{{ $next_record->id }}'>Next Chapter</x-button>
-        <x-button>Chapter Index</x-button>
+        <x-button type='button'>Chapter Index</x-button>
         <x-button>Comments</x-button>
         <x-button>Share</x-button>
         <x-button>Download</x-button>
@@ -65,7 +65,7 @@
                 <p>Harry Potter, Ginny Weasley</p>
                 <p>Alternate Universe - No Voldemort</p>
                 <p>English</p>
-                <p>Published:2022-07-3 1Updated:2024-08-27 Words:41,903 Chapters:12/? Comments:35 Kudos:144</p>
+                <p>Published:{{ $chapter->work->created_at }} Updated:{{ $chapter->work->updated_at }} Words:41,903 Chapters:{{ count($work->chapters) }}/{{ $work->chapter_count }} Comments:{{ count($work->comments) }} Kudos:{{ $work->kudos }}</p>
             </div>
 
         </div>
@@ -84,6 +84,8 @@
             <h2>{{ $chapter->title }}</h2>
 
             <p>{{ $chapter->body }}</p>
+
+            <p></p>
     
     
          </div>
@@ -95,9 +97,13 @@
      <div class="flex justify-end">
         <x-button>Top</x-button>
         <x-button>Next Chapter</x-button>
-        <x-button>Kudos</x-button>
-        <x-button>Comments</x-button>
+        <x-button type="button" form='kudos'>Kudos</x-button>
+        <x-button type="button" onclick="displayComments()">Comments</x-button>
     </div>
+
+    <form id="kudos" class="hidden" action="/works/{{ $chapter->work_id }}/chapters/kudos" method="POST">
+        @csrf
+    </form>
 
     {{-- Kudos section and comment section  --}}
 
@@ -105,7 +111,7 @@
 
     {{-- Comment section  --}}
 
-    {{-- <form action="/works/{{ $chapter->work_id }}/chapters/{{ $chapter->chapter_id }}/comments" method="POST">
+    <form action="/works/{{ $chapter->work_id }}/chapters/{{ $chapter->id }}/comments" method="POST">
         <x-input>Guest name</x-input>
         <x-input>Guest email</x-input>
         @csrf
@@ -113,11 +119,12 @@
         <x-input name='comment'>Comment</x-input>
     
         <button type='submit'>Comment</button>
-    </form> --}}
+    </form>
 
-    <div>The pagination links</div>
+    <div>The pagination links for the comments</div>
 
-    <div class="container">
+    <div class="container" id="comment_section">
+        <p>thecomments</p>
 
         @foreach ($chapter->comments as $comment)
 
@@ -142,6 +149,15 @@
 
     
 
-     
+    <script>
+        function displayComments() {
+            var x = document.getElementById("comment_section");
+            if (x.style.display === "none") {
+            x.style.display = "block";
+            } else {
+            x.style.display = "none";
+            }
+        }
+    </script> 
 
 </x-layout>
