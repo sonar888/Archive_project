@@ -25,11 +25,11 @@ class DatabaseSeeder extends Seeder
         
         // TagSeeder::class;
 
-        // Work::factory(3)->create();
-        // User::factory(2)->create();
+        Work::factory(3)->create();
+        User::factory(2)->create();
         
-        // Chapter::factory(20)->create();
-        // Comment::factory(12)->create();
+        Chapter::factory(20)->create();
+        Comment::factory(12)->create();
 
         $this->call(TagSeeder::class);
         

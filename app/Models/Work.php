@@ -23,6 +23,21 @@ class Work extends Model
         return $this->belongsToMany(Tag::class);
     }
 
+    public function rating()
+    {
+        return $this->belongsToMany(Rating::class);
+    }
+
+    public function warnings()
+    {
+        return $this->belongsToMany(ArchiveWarning::class);
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
+
     public function chapters()
 
     {

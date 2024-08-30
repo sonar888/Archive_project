@@ -56,10 +56,26 @@
                 <p>Stats</p>
             </div>
 
+            
+
             <div>
-                <p>Gen</p>
-                <p>No Archive Warnings apply</p>
-                <p>M/M</p>
+                <p>{{ $work->rating[0]->name }}</p>
+                <p>
+                    @foreach ($work->warnings as $warning )
+                        <span>{{ $warning->name }},</span>   
+                    @endforeach
+
+                </p>
+
+                <p>
+                    @foreach ($work->categories as $category )
+                        <span>{{ $category->name }},</span>   
+                    @endforeach
+                </p>
+                
+
+                
+
                 <p>Harry Potter</p>
                 <p>Harry Potter/Ginny Weasley</p>
                 <p>Harry Potter, Ginny Weasley</p>

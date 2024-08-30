@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Tag;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TagSeeder extends Seeder
 {
@@ -13,44 +14,68 @@ class TagSeeder extends Seeder
      */
     public function run(): void
     {
-        Tag::factory()->create([
-            'name' => 'Choose Not To Use Archive Warnings',
-            'type' => 'Archive Warnings'
+        //Seeding the DB with the rating
+
+        DB::table('rating')->insert([
+            'name' => 'Not rated'
         ]);
 
-        Tag::factory()->create([
-            'name' => 'Graphic Depictions Of Violence',
-            'type' => 'Archive Warnings'
+        DB::table('rating')->insert([
+            'name' => 'General Audiences'
         ]);
 
-        Tag::factory()->create([
-            'name' => 'Major Character Death',
-            'type' => 'Archive Warnings'
+        DB::table('rating')->insert([
+            'name' => 'Teen And Up Audiences '
         ]);
 
-        Tag::factory()->create([
-            'name' => 'Not Rated',
-            'type' => 'Rating'
+        DB::table('rating')->insert([
+            'name' => 'Mature'
         ]);
 
-        Tag::factory()->create([
-            'name' => 'General Audiences',
-            'type' => 'Rating'
+        DB::table('rating')->insert([
+            'name' => 'Explicit'
         ]);
 
-        Tag::factory()->create([
-            'name' => 'Teen and Up Audiences',
-            'type' => 'Rating'
+        //Seeding the DB with the archive warnings
+
+        DB::table('archive_warning')->insert([
+            'name' => 'Choose Not To Use Archive Warnings'
         ]);
 
-        Tag::factory()->create([
-            'name' => 'Mature',
-            'type' => 'Rating'
+        DB::table('archive_warning')->insert([
+            'name' => 'Graphic Depictions Of Violence'
         ]);
 
-        Tag::factory()->create([
-            'name' => 'Explicit',
-            'type' => 'Rating'
+        DB::table('archive_warning')->insert([
+            'name' => 'Major Character Death'
         ]);
+
+        DB::table('archive_warning')->insert([
+            'name' => 'No Archive Warnings Apply'
+        ]);
+
+
+
+        //Seeding the DB with the category
+
+        DB::table('category')->insert([
+            'name' => 'F/F'
+        ]);
+
+        DB::table('category')->insert([
+            'name' => 'F/M'
+        ]);
+
+        DB::table('category')->insert([
+            'name' => 'Gen'
+        ]);
+
+        DB::table('category')->insert([
+            'name' => 'M/M'
+        ]);
+
+
+
+        
     }
 }
