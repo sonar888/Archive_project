@@ -16,12 +16,7 @@
       
   
     </div>
-    <div>
-      <form action="GET">
-        <input class="rounded px-1" type="text" placeholder="searchbar">
-        <button class="bg-blue rounded "> search</button>
-      </form>
-    </div>
+    <x-searchbar></x-searchbar>
 
   </div>
  

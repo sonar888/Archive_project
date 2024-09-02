@@ -5,6 +5,7 @@ use App\Http\Controllers\TagController;
 use App\Http\Controllers\ChapterController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\KudosController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Work;
 
@@ -52,6 +53,8 @@ Route::patch('/works/{work}/chapters/{chapter}', [ChapterController::class,'upda
 
 Route::delete('/works/{work}/chapters/{chapter}', [ChapterController::class,'destroy']);
 
+
+
 //Works controller
 
 Route::get('/works', [WorkController::class, 'index']);
@@ -66,7 +69,18 @@ Route::patch('/works/{work}', [WorkController::class,'update']);
 Route::delete('/works/{work}', [WorkController::class,'destroy']);
 
 
+//Search controller
 
+Route::get('/search', SearchController::class);
+// Route::post('/works', [SearchController::class,'store']);
+
+// Route::get('/works/create', [SearchController::class,'create']);
+// Route::get('/works/{work}/edit', [SearchController::class, 'edit']);
+
+// Route::get('/works/{work}', [SearchController::class, 'show']);
+// Route::patch('/works/{work}', [SearchController::class,'update']);
+
+// Route::delete('/works/{work}', [SearchController::class,'destroy']);
 
 
 

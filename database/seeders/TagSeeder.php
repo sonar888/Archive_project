@@ -75,6 +75,13 @@ class TagSeeder extends Seeder
         ]);
 
 
+        //Additonal tags
+
+        Tag::factory(20)->create(
+            
+        );
+
+
 
         
     }

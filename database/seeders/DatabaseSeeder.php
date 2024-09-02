@@ -25,13 +25,25 @@ class DatabaseSeeder extends Seeder
         
         // TagSeeder::class;
 
-        Work::factory(3)->create();
-        User::factory(2)->create();
-        
-        Chapter::factory(20)->create();
-        Comment::factory(12)->create();
+        // $user = User::factory()
+        //     ->has(Post::factory()->count(3))
+        //     ->create();
+
+        Work::factory(5)
+            ->has(Chapter::factory()->count(3))
+            ->has(Comment::factory()->count(3))
+            ->has(Tag::factory()->count(3))
+            ->create(
+                [
+                    "kudos"=>1000,
+                    "chapter_count"=>12
+                ]
+                );
 
         $this->call(TagSeeder::class);
+
+        
+
         
 
     }

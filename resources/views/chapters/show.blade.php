@@ -41,6 +41,12 @@
 
      {{-- Work warnings --}}
 
+     {{-- <x-card-work>
+        <x-slot:rating>{{ $work->rating[0]->name }}</x-slot:rating>
+     </x-card-work> --}}
+
+     
+
      <div class="container p-11">
         <div class="flex gap-6">
 
@@ -90,21 +96,45 @@
 
      {{-- Work  --}}
 
-     <div class="container">
-        <div class="">
-            <h1>{{ $chapter->work->title }}</h1>
-            <p><a href="">{{ $chapter->work->author->name }}</a></p>
-    
-            <p>{{ $chapter->work->summary }}</p> <br/>
+     <div class="work">
+        
+            <div id="preface" class="container mx-auto px-11">
+                <h2>{{ $chapter->work->title }}</h2>
+                <h3><a href="">{{ $chapter->work->author->name }}</a></h3>
+                <div class="summary-module">
+                    <h3>Summary</h3>
+                    <blockquote>
+                        <p>{{ $chapter->work->summary }}</p> <br/>
+                    </blockquote>   
+                </div>
+            </div>
+            
 
-            <h2>{{ $chapter->title }}</h2>
+            <div class="chapters">
+                <div class="chapter">
+                    <div class='chapter-preface'>
+                        <h3>{{ $chapter->title }}</h3>
+                        <div class="notes">
+                            <h3>Notes:</h3>
+                            <blockquote>
+                                <p>Hello all</p>
+                                <p>Welcome to my first fanfiction</p>
+                            </blockquote>
+                            <p>See the end of the chapter for more notes</p>
 
-            <p>{{ $chapter->body }}</p>
+                        </div>
+                    </div>
 
-            <p></p>
-    
-    
-         </div>
+                </div>
+                <div class="container px-1 mx-auto">
+                    <p>{{ $chapter->body }}</p>
+
+                </div>
+
+            </div>
+
+            
+        
 
      </div>
 

@@ -53,4 +53,19 @@ class Work extends Model
     {
         return $this->hasMany(Kudos::class);
     }
+
+    public function characters()
+    {
+        return $this->belongsToMany(Character::class);
+    }
+
+    public function relationships()
+    {
+        return $this->belongsToMany(Relationship::class);
+    }
+
+    public function fandoms()
+    {
+        return $this->belongsToMany(Fandom::class);
+    }
 }

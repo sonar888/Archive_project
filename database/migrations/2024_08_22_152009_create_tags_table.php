@@ -32,6 +32,34 @@ return new class extends Migration
             
         });
 
+        Schema::create('relationship', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+            
+        });
+
+        Schema::create('fandom', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+            
+        });
+
+        Schema::create('characters', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+            
+        });
+
+        Schema::create('additional-tags', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+            
+        });
+
     }
 
     /**
@@ -39,9 +67,12 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rating-tags');
-        Schema::dropIfExists('archive-warning-tags');
-        Schema::dropIfExists('category-tags');
+        Schema::dropIfExists('rating');
+        Schema::dropIfExists('archive-warning');
+        Schema::dropIfExists('category');
+        Schema::dropIfExists('relationship');
+        Schema::dropIfExists('characters');
+        Schema::dropIfExists('fandom');
     }
 };
 
