@@ -97,19 +97,39 @@
           <div><textarea name="summary" id="" cols="30" rows="10" value='some sumary text for testing'></textarea><x-forms.error></x-forms.error></div>
 
           <div>
-            <label for="notes-start">at the beginning</label>
-            <input type="checkbox">
             <div>
-              <h3>Notes</h3>
-              <textarea name="start-notes" id="" cols="30" rows="10" value="start notes go here"></textarea><x-forms.error></x-forms.error>
+              <label for="notes-start"><input type="checkbox" id='myCheck' onclick="showNoteBox('start-notes','myCheck')"> at the beginning</label>
             </div>
+            
+            <div style="display:none" id="start-notes">
+              <h3>Notes</h3>
+              <textarea  name="start-notes" id="notes-start" cols="30" rows="10" value="start notes go here"></textarea><x-forms.error></x-forms.error>
+            </div>
+           
+            <script>
+              function showNoteBox($notes, $id) {
+                var checkBox = document.getElementById($id)
+                var text = document.getElementById($notes)
+            
+                if(checkBox.checked) {
+                  text.style.display = "block";
+                } else {
+                  text.style.display = "none";
+                }
+              }
+            
+            </script>
 
 
-            <label for="notes-end">at the end</label>
-            <input type="checkbox">
             <div>
+              <label for="notes-end"><input type="checkbox" id='myCheck2' onclick="showNoteBox('end-notes','myCheck2')"/>at the end</label>
+            
+
+            </div>
+            
+            <div  style="display:none" id="end-notes">
               <h3>End Notes</h3>
-              <textarea name="end-notes" id="" cols="30" rows="10" value="my end notes "></textarea><x-forms.error></x-forms.error>
+              <textarea name="end-notes"   cols="30" rows="10" value="my end notes "></textarea><x-forms.error></x-forms.error>
             </div>
             
           </div>
@@ -138,3 +158,4 @@
 
 
 </x-layout>
+
