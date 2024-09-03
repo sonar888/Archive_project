@@ -42,10 +42,10 @@ class ChapterController extends Controller
 
 
 
-    public function store(Work $work, Chapter $chapter) {
+    public function store(Work $work) {
         request()->validate(
             [
-                'title' => ['required', 'min:3'],
+                
                 'body' => ['required', 'min:3']
             ]
             );

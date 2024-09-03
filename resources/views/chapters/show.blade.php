@@ -31,12 +31,12 @@
 
     {{-- Work navigation Top --}}
     <div class="flex justify-end">
-        <x-button href='/works/{{ $chapter->work->id }}/chapters'>Entire Work</x-button>
-        <x-button href='/works/{{ $chapter->work->id }}/chapters/{{ $next_record->id }}'>Next Chapter</x-button>
-        <x-button type='button'>Chapter Index</x-button>
-        <x-button>Comments</x-button>
-        <x-button>Share</x-button>
-        <x-button>Download</x-button>
+        <x-forms.button href='/works/{{ $chapter->work_id }}/chapters'>Entire Work</x-forms.button>
+        {{-- <x-forms.button href='/works/{{ $chapter->work_id }}/chapters/{{ $next_record->id }}'>Next Chapter</x-forms.button> --}}
+        <x-forms.button type='forms.button'>Chapter Index</x-forms.button>
+        <x-forms.button>Comments</x-forms.button>
+        <x-forms.button>Share</x-forms.button>
+        <x-forms.button>Download</x-forms.button>
     </div>
 
      {{-- Work warnings --}}
@@ -141,10 +141,10 @@
      {{-- Work naviguation bottom --}}
 
      <div class="flex justify-end">
-        <x-button>Top</x-button>
-        <x-button>Next Chapter</x-button>
-        <x-button type="button" form='kudos'>Kudos</x-button>
-        <x-button type="button" onclick="displayComments()">Comments</x-button>
+        <x-forms.button>Top</x-forms.button>
+        <x-forms.button>Next Chapter</x-forms.button>
+        <x-forms.button type="forms.button" form='kudos'>Kudos</x-forms.button>
+        <x-forms.button type="forms.button" onclick="displayComments()">Comments</x-forms.button>
     </div>
 
     <form id="kudos" class="hidden" action="/works/{{ $chapter->work_id }}/chapters/kudos" method="POST">
@@ -157,15 +157,15 @@
 
     {{-- Comment section  --}}
 
-    <form action="/works/{{ $chapter->work_id }}/chapters/{{ $chapter->id }}/comments" method="POST">
-        <x-input>Guest name</x-input>
-        <x-input>Guest email</x-input>
+    {{-- <form action="/works/{{ $chapter->work_id }}/chapters/{{ $chapter->id }}/comments" method="POST">
+        <x-forms.input>Guest name</x-forms.input>
+        <x-forms.input>Guest email</x-forms.input>
         @csrf
     
-        <x-input name='comment'>Comment</x-input>
+        <x-forms.input name='comment'>Comment</x-forms.input>
     
-        <button type='submit'>Comment</button>
-    </form>
+        <forms.button type='submit'>Comment</forms.button>
+    </form> --}}
 
     <div>The pagination links for the comments</div>
 

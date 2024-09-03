@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Relationship extends Model
 {
     use HasFactory;
-    protected $table = 'relationship';
+    protected $table = 'relationships';
 
     
 

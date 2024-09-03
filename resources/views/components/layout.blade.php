@@ -39,20 +39,6 @@
       <main class="my-5">
        {{ $slot }}
 
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
     </main>
     </div>
       

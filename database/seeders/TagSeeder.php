@@ -38,39 +38,39 @@ class TagSeeder extends Seeder
 
         //Seeding the DB with the archive warnings
 
-        DB::table('archive_warning')->insert([
+        DB::table('archive_warnings')->insert([
             'name' => 'Choose Not To Use Archive Warnings'
         ]);
 
-        DB::table('archive_warning')->insert([
+        DB::table('archive_warnings')->insert([
             'name' => 'Graphic Depictions Of Violence'
         ]);
 
-        DB::table('archive_warning')->insert([
+        DB::table('archive_warnings')->insert([
             'name' => 'Major Character Death'
         ]);
 
-        DB::table('archive_warning')->insert([
+        DB::table('archive_warnings')->insert([
             'name' => 'No Archive Warnings Apply'
         ]);
 
 
 
-        //Seeding the DB with the category
+        //Seeding the DB with the categories
 
-        DB::table('category')->insert([
+        DB::table('categories')->insert([
             'name' => 'F/F'
         ]);
 
-        DB::table('category')->insert([
+        DB::table('categories')->insert([
             'name' => 'F/M'
         ]);
 
-        DB::table('category')->insert([
+        DB::table('categories')->insert([
             'name' => 'Gen'
         ]);
 
-        DB::table('category')->insert([
+        DB::table('categories')->insert([
             'name' => 'M/M'
         ]);
 

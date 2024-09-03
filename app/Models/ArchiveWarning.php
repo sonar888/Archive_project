@@ -9,7 +9,7 @@ class ArchiveWarning extends Model
 {
     use HasFactory;
 
-    protected $table='archive_warning';
+    protected $table='archive_warnings';
 
     public function works()
     {

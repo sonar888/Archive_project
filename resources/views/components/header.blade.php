@@ -16,6 +16,9 @@
       <div>
         <a href="/register" class="hover-text-light">Register</a> 
       </div>
+      <div>
+        <x-nav-link href="/works/create">+</x-nav-link>
+      </div>
     </div>
   </div>
 

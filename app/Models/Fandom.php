@@ -9,7 +9,7 @@ class Fandom extends Model
 {
     use HasFactory;
 
-    protected $table = 'fandom';
+    protected $table = 'fandoms';
 
     public function works()
     {

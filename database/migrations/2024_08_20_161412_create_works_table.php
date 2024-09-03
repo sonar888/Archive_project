@@ -21,6 +21,8 @@ return new class extends Migration
             $table->integer('chapter_count');
             $table->integer('kudos');
             $table -> timestamps();
+            $table->text('end-notes');
+            $table->text('start-notes');
             
             
         });

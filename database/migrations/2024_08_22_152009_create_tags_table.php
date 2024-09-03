@@ -18,28 +18,28 @@ return new class extends Migration
             
         });
 
-        Schema::create('archive_warning', function (Blueprint $table) {
+        Schema::create('archive_warnings', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->timestamps();
             
         });
 
-        Schema::create('category', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->timestamps();
             
         });
 
-        Schema::create('relationship', function (Blueprint $table) {
+        Schema::create('relationships', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->timestamps();
             
         });
 
-        Schema::create('fandom', function (Blueprint $table) {
+        Schema::create('fandoms', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->timestamps();
