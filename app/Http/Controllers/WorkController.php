@@ -50,20 +50,29 @@ class WorkController extends Controller
 
         request()->validate([
             // "rating"=>['required'],
-            // //warning: one out of four required
+            
+            'warnings' => ['required', 'array'],
+            // 'warnings.*' => 'string|in:code,netflix,games,sports,reading',
+           
+            
             // "fandoms"=>['required', 'min:5'],
-            // //categories
-            // //relationships
-            // //characters
-            // //tags
+            
 
             // "title"=>['required', "min:3"],
             // "summary"=>['required'],
-            // //notes
+            
             // "chapter"=>['required', "min:5"]
+            //categories
+            //relationships
+            //characters
+            //tags
+            //notes
+            
 
             
         ]);
+
+        dd(request());
 
         //Create the work
 
@@ -83,6 +92,14 @@ class WorkController extends Controller
         
 
         //Create the tags
+
+            //archive warnings
+
+           
+
+            //if none ot the archive warnings are selected then error, else add the warnings to the work
+
+            
 
             //rating
 

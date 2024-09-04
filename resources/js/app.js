@@ -1,11 +1,21 @@
 import './bootstrap';
 
 
-function myFunction() {
-    var x = document.getElementById("myDIV");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
+console.log('hello world')
+
+function showNoteBox(notes, id) {
+  var checkBox = document.getElementById(id)
+  var text = document.getElementById(notes)
+
+  if(checkBox.checked) {
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
   }
+
+  // console.log(checkBox, text)
+}
+
+window.showNoteBox = showNoteBox
+
+

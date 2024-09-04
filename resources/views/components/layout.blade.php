@@ -13,6 +13,8 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
+
+
         <style>
           @import url('https://fonts.googleapis.com/css2?family=Grey+Qo&display=swap');
           </style>
@@ -20,6 +22,9 @@
 
         <!-- Styles -->
         <script src="https://kit.fontawesome.com/7c9183587f.js" crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
         
     </head>
     <!--
