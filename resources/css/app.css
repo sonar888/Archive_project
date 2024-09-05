@@ -10,6 +10,17 @@
     display: block;
   }
 
+  .form-title {
+    background-color: white;
+    height: fit-content;
+    width: fit-content;
+    padding: 7px;
+    position: relative;
+    left: 20px;
+    top: 20px;
+
+  }
+
   
   
   /* 

@@ -32,7 +32,8 @@
                   <option value="mature">Mature</option>
                   <option value="explicit">Explicit</option>
                 </select>
-            </div>
+              </div>
+          </div>
   
             <div id="warnings" class="bg-light" >
               <div><input type="checkbox" id="1" value="not-to-use" name="warnings[]">

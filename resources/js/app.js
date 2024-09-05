@@ -3,7 +3,7 @@ import './bootstrap';
 
 console.log('hello world')
 
-function showNoteBox(notes, id) {
+function showBox(notes, id) {
   var checkBox = document.getElementById(id)
   var text = document.getElementById(notes)
 
@@ -16,6 +16,7 @@ function showNoteBox(notes, id) {
   // console.log(checkBox, text)
 }
 
-window.showNoteBox = showNoteBox
+
+window.showBox = showBox
 
 

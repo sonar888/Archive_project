@@ -51,7 +51,7 @@ class WorkController extends Controller
         request()->validate([
             // "rating"=>['required'],
             
-            'warnings' => ['required', 'array'],
+            // 'warnings' => ['required', 'array'],
             // 'warnings.*' => 'string|in:code,netflix,games,sports,reading',
            
             
