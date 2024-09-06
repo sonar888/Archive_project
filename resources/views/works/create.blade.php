@@ -11,9 +11,9 @@
         <x-rating-card>Rating</x-rating-card>
         <x-warning-card>Archive Warnings</x-warning-card>
         <x-dynamic name='relationships'>Relationships</x-dynamic>
-        <x-dynamic name='fandoms'>Fandoms</x-dynamic>
+        {{-- <x-dynamic name='fandoms'>Fandoms</x-dynamic>
         <x-dynamic name='characters'>Characters</x-dynamic>
-        <x-dynamic name='additional-tags'>Additional Tags</x-dynamic>
+        <x-dynamic name='additional-tags'>Additional Tags</x-dynamic> --}}
       </x-form-card>
     
     

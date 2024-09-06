@@ -1,7 +1,7 @@
 import './bootstrap';
 
 
-console.log('hello world')
+
 
 function showBox(notes, id) {
   var checkBox = document.getElementById(id)
