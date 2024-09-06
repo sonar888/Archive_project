@@ -10,10 +10,11 @@
     
         <x-rating-card>Rating</x-rating-card>
         <x-warning-card>Archive Warnings</x-warning-card>
-        <x-dynamic name='relationships'>Relationships</x-dynamic>
-        {{-- <x-dynamic name='fandoms'>Fandoms</x-dynamic>
-        <x-dynamic name='characters'>Characters</x-dynamic>
-        <x-dynamic name='additional-tags'>Additional Tags</x-dynamic> --}}
+        <x-dynamic name='relationships' parent='relationships-parent' selection='relationships-selection'>Relationships</x-dynamic>
+
+        <x-dynamic name='fandoms' parent='fandoms-parent' selection='fandoms-selection'>Fandoms</x-dynamic>
+        <x-dynamic name='characters' parent='characters-parent' selection='characters-selection'>Characters</x-dynamic>
+        
       </x-form-card>
     
     

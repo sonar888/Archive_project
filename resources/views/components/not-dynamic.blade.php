@@ -2,7 +2,7 @@
 
  @if ($type =='input')
 
- <div class="flex row ui-widget justify-between my-6 px-12 mx-6">
+ <div class="flex row  justify-between my-6 px-12 mx-6">
     <div>
         <label for="{{ $id }}"><h2>{{ $slot }}</h2></label>
     </div>
@@ -13,7 +13,7 @@
 
 @elseif ($type == 'textarea')
 
-    <div class="flex row ui-widget justify-between my-6 px-12 mx-6">
+    <div class="flex row  justify-between my-6 px-12 mx-6">
         <div>
             <label for="{{ $id }}"><h2>{{ $slot }}</h2></label>
         </div>
