@@ -9,13 +9,25 @@
       </div>  
     </div>
     <div>
-      <div>
-        <a href="/login" class="hover-text-light">Login</a> 
-      </div>
-    
-      <div>
-        <a href="/register" class="hover-text-light">Register</a> 
-      </div>
+      @auth
+      <form method="POST" action="/logout">
+        @csrf
+        <button type='submit' class="hover-text-light">Logout</button> 
+      </form>   
+      @endauth
+
+      @guest
+        <div>
+          <a href="/login" class="hover-text-light">Login</a> 
+        </div>
+      
+        <div>
+          <a href="/register" class="hover-text-light">Register</a> 
+        </div>
+        
+      @endguest
+
+      
       <div>
         <x-nav-link href="/works/create">+</x-nav-link>
       </div>

@@ -39,6 +39,8 @@ class DatabaseSeeder extends Seeder
                     "chapter_count"=>12
                 ]
                 );
+        
+        User::factory(7)->create();
 
         $this->call(TagSeeder::class);
 

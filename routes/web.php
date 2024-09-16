@@ -6,6 +6,8 @@ use App\Http\Controllers\ChapterController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\KudosController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Work;
 
@@ -22,6 +24,8 @@ Route::get('/', function (){
 Route::get('/tags', function () {
     return view('tags.index');
 });
+
+Route::view('/dashboard', 'dashboard');
 
 
 //Kudos
@@ -60,27 +64,26 @@ Route::delete('/works/{work}/chapters/{chapter}', [ChapterController::class,'des
 Route::get('/works', [WorkController::class, 'index']);
 Route::post('/works', [WorkController::class,'store']);
 
-Route::get('/works/create', [WorkController::class,'create']);
-Route::get('/works/{work}/edit', [WorkController::class, 'edit']);
+Route::get('/works/create', [WorkController::class,'create'])
+    ->middleware('auth');
+Route::get('/works/{work}/edit', [WorkController::class, 'edit'])
+    ->middleware('auth')
+    ->can('edit', 'work');
 
 Route::get('/works/{work}', [WorkController::class, 'show']);
-Route::patch('/works/{work}', [WorkController::class,'update']);
+Route::patch('/works/{work}', [WorkController::class,'update'])
+    ->middleware('auth')
+    ->can('edit', 'work');
 
-Route::delete('/works/{work}', [WorkController::class,'destroy']);
+Route::delete('/works/{work}', [WorkController::class,'destroy'])
+    ->middleware('auth')
+    ->can('edit', 'work');
 
 
 //Search controller
 
 Route::get('/search', SearchController::class);
-// Route::post('/works', [SearchController::class,'store']);
 
-// Route::get('/works/create', [SearchController::class,'create']);
-// Route::get('/works/{work}/edit', [SearchController::class, 'edit']);
-
-// Route::get('/works/{work}', [SearchController::class, 'show']);
-// Route::patch('/works/{work}', [SearchController::class,'update']);
-
-// Route::delete('/works/{work}', [SearchController::class,'destroy']);
 
 
 
@@ -97,3 +100,14 @@ Route::get('tags/{tag}', [TagController::class, 'show']);
 Route::patch('/tags/{tag}', [TagController::class,'update']);
 
 Route::delete('/tags/{tag}', [TagController::class,'destroy']);
+
+
+//Auth
+
+Route::get('/register', [RegisterController::class, 'create']);
+Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/login', [SessionController::class, 'create'])->name('login');
+Route::post('/login', [SessionController::class, 'store']);
+
+Route::post('/logout', [SessionController::class, 'destroy']);

@@ -8,6 +8,7 @@ use App\Models\Rating;
 use Illuminate\Http\Request;
 use App\Models\Work;
 use App\Models\Chapter;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class WorkController extends Controller
@@ -72,17 +73,17 @@ class WorkController extends Controller
             
         ]);
 
-        dd(request());
+        
 
         //Create the work
 
         $work = Work::create([
-            'title'=>request('title'),
+            'title'=>request('work_title'),
             'summary'=>'this is a summary for testing', //
             
             
             'chapter_count'=>1,
-            'author_id'=> 3, //change later
+            'author_id'=> Auth::user()->id,
             'kudos'=>0,
 
             'end-notes'=>"my end notes go here",
@@ -185,7 +186,7 @@ class WorkController extends Controller
 
         $chapter = Chapter::create([
             'title'=>'Chapter 1',
-            'body' => request('chapter'),
+            'body' => "this is a chapter body",
             'work_id' => $work->id
             
         ]);
