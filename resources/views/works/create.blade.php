@@ -23,6 +23,8 @@
        
         
         <x-not-dynamic id='work_title'>Work Title</x-not-dynamic>
+        <x-error name='work_title'/>
+        
         <x-not-dynamic id="summary" type='textarea'>Summary</x-not-dynamic>
     
         <div class="flex row ui-widget justify-between my-6 px-12 mx-6">
@@ -56,7 +58,7 @@
     
       <x-form-card>
         <x-slot:heading>Work Text</x-slot:heading>
-        <x-not-dynamic id='body' type='textarea'>Work Text</x-not-dynamic>
+        <x-not-dynamic id='work' type='textarea'>Work Text</x-not-dynamic>
         
       </x-form-card>
   

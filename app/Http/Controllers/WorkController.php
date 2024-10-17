@@ -50,28 +50,29 @@ class WorkController extends Controller
         //Validate the request
 
         request()->validate([
-            // "rating"=>['required'],
-            
-            // 'warnings' => ['required', 'array'],
-            // 'warnings.*' => 'string|in:code,netflix,games,sports,reading',
-           
-            
-            // "fandoms"=>['required', 'min:5'],
-            
+            "rating"=>['required'],
+            "warnings"=> ['required'],
+            "relationships-selection" => ['array', 'distinct:ignore_case'],
+            "fandoms-selection" => ['required', 'array', 'distinct:ignore_case'],
+            "characters-selection" => ['required', 'array', 'distinct:ignore_case'],
 
-            // "title"=>['required', "min:3"],
-            // "summary"=>['required'],
-            
-            // "chapter"=>['required', "min:5"]
-            //categories
-            //relationships
-            //characters
+
+            "work_title" => ['required', 'string', 'min:1', 'max:255', 'ascii'],
+            "summary"=> ['required', 'string', 'min:10', 'max:1250', 'ascii'],
+            "start-notes" => ['string', 'min:10', 'max:5000', 'ascii'],
+            "end-notes" => ['string', 'min:10', 'max:5000', 'ascii'],
+
+            "work"=>['required', 'min:10', 'max:500000' ]
+
+           
             //tags
-            //notes
+          
             
 
             
         ]);
+
+        dd(request());
 
         
 

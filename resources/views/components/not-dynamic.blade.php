@@ -13,6 +13,8 @@
         </div>
     </div>
 
+    
+
 @else
 
 <div class="flex row  justify-between my-6 px-12 mx-6">
