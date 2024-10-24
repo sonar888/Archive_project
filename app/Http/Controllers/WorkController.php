@@ -27,19 +27,7 @@ class WorkController extends Controller
     }
 
     public function store() {
-        // request()->validate(
-        //     [
-        //         'title' => ['required', 'min:3'],
-        //         'body' => ['required', 'min:3']
-        //     ]
-        //     );
-        
-        // $work = Work::create([
-        //     'title' => request('title'),
-        //     'body' => request('body'),
-        //     'author' => 1,
-        //     'chapters' => 1
-        // ]);
+
         
         // return redirect ('/works/'. $work['id']);
 
@@ -80,15 +68,15 @@ class WorkController extends Controller
 
         $work = Work::create([
             'title'=>request('work_title'),
-            'summary'=>'this is a summary for testing', //
+            'summary'=>request('summary'), 
             
             
             'chapter_count'=>1,
             'author_id'=> Auth::user()->id,
             'kudos'=>0,
 
-            'end-notes'=>"my end notes go here",
-            'start-notes'=>"request('start-notes')",
+            'end-notes'=>request('end-notes'),
+            'start-notes'=>request('start-notes'),
         ]);
 
         
@@ -134,21 +122,21 @@ class WorkController extends Controller
             }
 
             //Categories
-            $categories = DB::table('categories')
-                ->select('id')
-                ->where('name', request('categories'))
-                ->get();
+            // $categories = DB::table('categories')
+            //     ->select('id')
+            //     ->where('name', request('categories'))
+            //     ->get();
 
         
-            foreach($categories as $category) {
-                $work->categories()->attach($category);
-            }
+            // foreach($categories as $category) {
+            //     $work->categories()->attach($category);
+            // }
 
             //Fandoms
 
             $fandoms = DB::table('fandoms')
                 ->select('id')
-                ->where('name', request('fandoms'))
+                ->where('name', request('fandoms-selection'))
                 ->get();
 
         
@@ -160,7 +148,7 @@ class WorkController extends Controller
 
             $relationships = DB::table('relationships')
                 ->select('id')
-                ->where('name', request('relationships'))
+                ->where('name', request('relationships-selection'))
                 ->get();
 
         
@@ -172,7 +160,7 @@ class WorkController extends Controller
 
             $characters = DB::table('characters')
                 ->select('id')
-                ->where('name', request('characters'))
+                ->where('name', request('characters-selection'))
                 ->get();
 
         
@@ -186,8 +174,8 @@ class WorkController extends Controller
         //Create the chapter
 
         $chapter = Chapter::create([
-            'title'=>'Chapter 1',
-            'body' => "this is a chapter body",
+            'title'=>request('work_title'),
+            'body' => request('work'),
             'work_id' => $work->id
             
         ]);
