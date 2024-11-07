@@ -19,6 +19,7 @@
 
           <x-dynamic name='fandoms' parent='fandoms-parent' selection='fandoms-selection'>Fandoms</x-dynamic>
           <x-error name='fandoms-selection'/>
+          <x-error name='fandoms'/>
 
           <x-dynamic name='characters' parent='characters-parent' selection='characters-selection'>Characters</x-dynamic>
           <x-error name='characters-selection'/>

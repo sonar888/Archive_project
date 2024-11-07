@@ -27,7 +27,7 @@
         
         </div>
         
-        <input type="text" id='{{ $name }}' onkeyup="myFunction('{{ $name }}', {{ $array }}, '{{ $parent }}', '{{ $selection }}')" autocomplete="off" class="px-2">
+        <input type="text" id='{{ $name }}' name='{{ $name }}' onkeyup="myFunction('{{ $name }}', {{ $array }}, '{{ $parent }}', '{{ $selection }}')" autocomplete="off" class="px-2">
         <ul id='{{ $parent }}' role="listbox">
     
         </ul>
