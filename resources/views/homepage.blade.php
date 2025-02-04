@@ -68,7 +68,29 @@
                 </div>
 
             </div>
+
+        {{-- End Notes and related works --}}
+            <div class="mx-12 mt-6 px-2 border-t-2">
+                <div class=" pb-2">
+                    <h2 class="font-serif text-lg my-2 border-b-2">Notes</h2>
+                    <p class="my-3">These are the start notes</p>
+                    
+                    <div>
+                        <h4>Works inspired by this one</h4>
+                        <p class="mt-5 mb-2"> (See the end of the work for <a href="" class="underline">other works inspired by this one</a> ) </p>
+                    </div>
+
+                    <div>
+                        <h4>Series this work belongs to</h4>
+                        <p class="mt-5 mb-2"> (See the end of the work for <a href="" class="underline">other works inspired by this one</a> ) </p>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
+
+        
+        
 
     
     {{-- Feedback --}}
@@ -97,24 +119,71 @@
             </div>
 
         {{-- Leave a comment --}}
-            <div class="border-1 m-1">
-                <form class="w-full p-2 bg-light">
-                    @auth
-                        <h4>Comment as Username</h4>
-                    @endauth
-                    @guest
-                        <h4>Comment as a guest</h4>
-                    @endguest
-                    <p><a href="">(Plaintext with limited HTML)</a></p>
-                    <textarea class="w-full min-h-48 py-2" name="" id=""></textarea>
-                    <x-button class="place-self-end">Comment</x-button>
-    
-    
-    
+            <div class="border border-double m-1">
+                <form class="w-full p-3 bg-light">
+                    <div class="flex flex-col">
+
+                        <div class="font-serif my-2">
+                            @auth
+                            <h4 class="">Comment as Username</h4>
+                            @endauth
+                            @guest
+                                <h4>Comment as a guest</h4>
+                        @endguest
+
+                        </div>
+                        
+                        <p class="text-[10px] p-[6px] place-self-end"><a href="">(Plaintext with limited HTML)</a></p>
+                        <div class="w-full py-2">
+                            <textarea class="w-full min-h-48 " name="" id=""></textarea>
+                        </div>
+                        <x-button class="place-self-end">Comment</x-button>
+                    </div>
+                    
                 </form>
             </div>
 
         {{-- Comments --}}
+
+            <div class="my-[9px] place-self-center"> 
+                <-- Navigation links -->
+            </div>
+
+            <div> {{-- 35 comments per page --}}
+
+
+                {{-- Each Comment --}}
+                <div class="border border-light">
+                    <div class=" bg-light flex flex-row justify-between p-[4px]">
+                        <div class="font-serif">
+                            <a class="underline" href="">ACool_nickname</a> on <a href="">chapter one</a>
+                        </div>
+                        <div>
+                            Sat 20 Mar 2021 07:28AM UTC
+                        </div>
+                    </div>
+                    <div>
+                        <div><img src="https://picsum.photos/100" alt=""></div>
+                        <blockquote>
+                            <p class="my-5">This is one short paragraph to tell you how great you are doing kudos to you </p>
+                            <p class="my-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sem dolor, porta quis ante hendrerit, pharetra viverra felis. Ut convallis placerat lorem, sit amet rhoncus sem condimentum quis. Aliquam ac gravida nunc. Donec ut dapibus risus. Proin elementum, neque a aliquam sollicitudin, felis sapien pharetra nisi, non finibus eros mauris a mauris. Phasellus varius mollis libero. Quisque nec elit finibus ipsum vulputate dapibus. Pellentesque rutrum commodo lorem, at scelerisque mi suscipit ac. Suspendisse potenti. Maecenas tempor lacus in lectus rhoncus pellentesque. Morbi mollis dolor enim, vel euismod nisl tempor eu.</p>
+                        </blockquote>
+
+                        <div class="flex flex-row flex-wrap gap-1 justify-end my-2 pr-1">
+                            <x-button>Reply</x-button>
+                            <x-button>Thread</x-button>
+                            <x-button>Parent Thread</x-button>
+                            <x-button>Block</x-button> 
+                        </div>
+                    
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="my-[9px] place-self-center"> 
+                <-- Navigation links -->
+            </div>
 
 
         </div>

@@ -1,4 +1,4 @@
-<header>
+<header class="mb-[14px]">
   <div class="w-full bg-white flex flex-col sm:flex-row sm:justify-between">
     <div class="h-12 flex flex-row px-2">
       <div><img class="h-full" src="images/logo-the-archive.png" alt=""></div>

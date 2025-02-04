@@ -38,7 +38,8 @@
   <body class=" bg-white">
     <div class="min-h-full w-full  flex flex-col "> <!-- lg:w-2/3 lg:mx-auto -->
       <x-header>The Archive</x-header>  
-      <main class="my-5">{{ $slot }}</main>
+      <main class="pt-[7px] pb-[49px] px-[27px]">{{ $slot }}</main>
+      <x-footer></x-footer>
     </div>     
   </body>
 </html>
