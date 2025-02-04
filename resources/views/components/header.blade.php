@@ -1,39 +1,25 @@
-<header class=''>
-  <div class="bg-light shadow flex justify-between align-middle py-5 px-6">
-    <div class="flex gap-3">
-      <div>
-        <img src="https://picsum.photos/30" alt="">
-      </div>
-      <div>
-        <a href="/"><h1 class="text-3xl font-archive bold  text-dark">The archive</h1></a>
-      </div>  
+<header>
+  <div class="w-full bg-white flex flex-col sm:flex-row sm:justify-between">
+    <div class="h-12 flex flex-row px-2">
+      <div><img class="h-full" src="images/logo-the-archive.png" alt=""></div>
+      <div class="font-archive text-5xl text-dark px-2">The Archive</div>
+    
     </div>
-    <div>
-      @auth
-      <form method="POST" action="/logout">
-        @csrf
-        <button type='submit' class="hover-text-light">Logout</button> 
-      </form>   
-      @endauth
+    <div class="w-full sm:w-1/3 xl:w-1/4 flex flex-row justify-end gap-2 p-2">
 
       @guest
-        <div>
-          <a href="/login" class="hover-text-light">Login</a> 
-        </div>
-      
-        <div>
-          <a href="/register" class="hover-text-light">Register</a> 
-        </div>
-        
+        <div>Register</div>
+        <div>Login</div>
       @endguest
 
+      @auth
+        <div>Hi, Username!</div>
+        <div>Post</div>
+        <div>Logout</div>
+      @endauth
       
-      <div>
-        <x-nav-link href="/works/create">+</x-nav-link>
-      </div>
     </div>
   </div>
 
   <x-nav></x-nav>
-  
 </header>

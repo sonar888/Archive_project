@@ -38,7 +38,7 @@ class WorkController extends Controller
             "rating"=>['required', 'in:not-rated,general-audiences,teen-and-up,mature,explicit'],
             "warnings"=> ['required'],
             //'relationships'
-            // "relationships-selection" => ['array', 'distinct:ignore_case'],
+            "relationships-selection" => ['array'],
             // "fandoms" => ['required_if:fandoms-selection,null'],
             // "fandoms-selection" => ['required_if:fandoms,null', 'array'],
 
@@ -134,15 +134,15 @@ class WorkController extends Controller
                 $work->warnings()->attach(ArchiveWarning::find(1));
             }
 
-            if(in_array('not-to-use', $warnings, true)) {
+            if(in_array('graphic-violence', $warnings, true)) {
                 $work->warnings()->attach(ArchiveWarning::find(2));
             }
 
-            if(in_array('not-to-use', $warnings, true)) {
+            if(in_array('major-death', $warnings, true)) {
                 $work->warnings()->attach(ArchiveWarning::find(3));
             }
 
-            if(in_array('not-to-use', $warnings, true)) {
+            if(in_array('no-warnings', $warnings, true)) {
                 $work->warnings()->attach(ArchiveWarning::find(4));
             }
 
@@ -175,17 +175,17 @@ class WorkController extends Controller
 
             //Relationships
 
-            // $relationships = DB::table('relationships')
-            //     ->select('id')
-            //     ->where('name', request('relationships-selection'))
-            //     ->get();
+            $relationships = DB::table('relationships')
+                ->select('id')
+                ->where('name', request('relationships-selection'))
+                ->get();
 
         
-            // foreach($relationships as $relationship) {
-            //     $work->relationships()->attach($relationship);
-            // }
+            foreach($relationships as $relationship) {
+                $work->relationships()->attach($relationship);
+            }
 
-            //CHaracters
+            //Characters
 
             // $characters = DB::table('characters')
             //     ->select('id')

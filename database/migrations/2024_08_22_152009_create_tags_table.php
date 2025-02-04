@@ -35,6 +35,11 @@ return new class extends Migration
         Schema::create('relationships', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('character_one');
+            $table->string('character_two');
+            $table->string('character_three');
+            $table->string('character_four');
+            $table->string('character_five');
             $table->timestamps();
             
         });

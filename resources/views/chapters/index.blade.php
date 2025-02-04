@@ -31,12 +31,12 @@
 
     {{-- Work navigation Top --}}
     <div class="flex justify-end">
-        <x-button>Entire Work</x-button>
+        {{-- <x-button>Entire Work</x-button> --}}
         {{-- <x-button href='/works/{{ $chapter->work->id }}/chapters/{{  }}'>Next Chapter</x-button> --}}
-        <x-button>Chapter Index</x-button>
+        {{-- <x-button>Chapter Index</x-button>
         <x-button>Comments</x-button>
         <x-button>Share</x-button>
-        <x-button>Download</x-button>
+        <x-button>Download</x-button> --}}
     </div>
 
      {{-- Work warnings --}}
@@ -57,15 +57,15 @@
             </div>
 
             <div>
-                <p>Gen</p>
-                <p>No Archive Warnings apply</p>
+                <p>{{ $work->rating }}</p>
+                <p>{{ $work->warnings }}</p>
                 <p>M/M</p>
                 <p>Harry Potter</p>
                 <p>Harry Potter/Ginny Weasley</p>
                 <p>Harry Potter, Ginny Weasley</p>
                 <p>Alternate Universe - No Voldemort</p>
                 <p>English</p>
-                <p>Published:2022-07-3 1Updated:2024-08-27 Words:41,903 Chapters:12/? Comments:35 Kudos:144</p>
+                <p>Published:2022-07-3 1Updated:2024-08-27 Words:41,903 Chapters:{{ $work->chapters }} Comments:35 Kudos:144</p>
             </div>
 
         </div>
@@ -98,10 +98,10 @@
      {{-- Work naviguation bottom --}}
 
      <div class="flex justify-end">
-        <x-button>Top</x-button>
+        {{-- <x-button>Top</x-button> --}}
         {{-- <x-button>Next Chapter</x-button> --}}
-        <x-button>Kudos</x-button>
-        <x-button>Comments</x-button>
+        {{-- <x-button>Kudos</x-button>
+        <x-button>Comments</x-button> --}}
     </div>
 
     {{-- Kudos section and comment section  --}}
