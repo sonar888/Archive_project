@@ -47,8 +47,10 @@
                         </div>               
                     </div>
                     <div class=" pb-2">
-                        <h2 class="font-serif text-lg my-2 border-b-2">Notes</h2>
-                        <p class="my-3">These are the start notes</p>
+                        <h2 class="font-serif text-lg my-2 border-b-2">Notes:</h2>
+                        <blockquote class="m-3">
+                            <p class="my-3">These are the start notes</p>
+                        </blockquote>
                         <p class="mt-5 mb-2"> (See the end of the work for <a href="" class="underline">other works inspired by this one</a> ) </p> 
                         
                     </div>
@@ -71,20 +73,23 @@
 
         {{-- End Notes and related works --}}
             <div class="mx-12 mt-6 px-2 border-t-2">
-                <div class=" pb-2">
-                    <h2 class="font-serif text-lg my-2 border-b-2">Notes</h2>
-                    <p class="my-3">These are the start notes</p>
-                    
-                    <div>
-                        <h4>Works inspired by this one</h4>
-                        <p class="mt-5 mb-2"> (See the end of the work for <a href="" class="underline">other works inspired by this one</a> ) </p>
-                    </div>
+                <div class="px-3 pt-3">
+                    <h2 class="font-serif text-lg my-3 border-b-2">Notes:</h2>
+                    <blockquote class="m-3">
+                        <p class="my-3">These are the end notes</p>
+                        <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sem dolor, porta quis ante hendrerit, pharetra viverra felis. Ut convallis placerat lorem, sit amet rhoncus sem condimentum quis. Aliquam ac gravida nunc. Donec ut dapibus risus. Proin elementum, neque a aliquam sollicitudin, felis sapien pharetra nisi, non finibus eros mauris a mauris. Phasellus varius mollis libero. Quisque nec elit finibus ipsum vulputate dapibus. Pellentesque rutrum commodo lorem, at scelerisque mi suscipit ac. Suspendisse potenti. Maecenas tempor lacus in lectus rhoncus pellentesque. Morbi mollis dolor enim, vel euismod nisl tempor eu.</p>
+                    </blockquote>
+                </div>
+            </div>
+            <div class="mx-12 mt-6 px-2">
+                <div class="pb-[9px]">
+                    <h4 class="font-serif text-md my-[10px]">Works inspired by this one:</h4>
+                    <p class="my-[10px]"> <a href="">Another awesome work</a> by <a href="">This_other_super_cool_author</a></p>
+                </div>
 
-                    <div>
-                        <h4>Series this work belongs to</h4>
-                        <p class="mt-5 mb-2"> (See the end of the work for <a href="" class="underline">other works inspired by this one</a> ) </p>
-                    </div>
-                    
+                <div class="pb-[9px]">
+                    <h4 class="font-serif text-md my-[10px]">Series this work belongs to:</h4>
+                    <p > Part 1 of <a class="underline" href="">This awesome Series</a> * <span><a class="underline" href="">Next Work --></a></span>  </p> 
                 </div>
             </div>
         </div>
@@ -153,9 +158,10 @@
 
 
                 {{-- Each Comment --}}
-                <div class="border border-light">
-                    <div class=" bg-light flex flex-row justify-between p-[4px]">
-                        <div class="font-serif">
+                <div class="border relative">
+                    <div class="absolute top-0 left-0"><img src="https://picsum.photos/100" alt=""></div>
+                    <div class=" bg-light flex flex-row justify-between p-[4px] ">  
+                        <div class="font-serif pl-[105px]">
                             <a class="underline" href="">ACool_nickname</a> on <a href="">chapter one</a>
                         </div>
                         <div>
@@ -163,7 +169,7 @@
                         </div>
                     </div>
                     <div>
-                        <div><img src="https://picsum.photos/100" alt=""></div>
+                        
                         <blockquote>
                             <p class="my-5">This is one short paragraph to tell you how great you are doing kudos to you </p>
                             <p class="my-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sem dolor, porta quis ante hendrerit, pharetra viverra felis. Ut convallis placerat lorem, sit amet rhoncus sem condimentum quis. Aliquam ac gravida nunc. Donec ut dapibus risus. Proin elementum, neque a aliquam sollicitudin, felis sapien pharetra nisi, non finibus eros mauris a mauris. Phasellus varius mollis libero. Quisque nec elit finibus ipsum vulputate dapibus. Pellentesque rutrum commodo lorem, at scelerisque mi suscipit ac. Suspendisse potenti. Maecenas tempor lacus in lectus rhoncus pellentesque. Morbi mollis dolor enim, vel euismod nisl tempor eu.</p>
